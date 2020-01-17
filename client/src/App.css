@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -30,4 +31,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.darkMode{
+  background: #292929;
+  color: #b4b4b4;
 }
