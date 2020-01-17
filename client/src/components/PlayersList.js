@@ -42,6 +42,7 @@ const PlayersList = (props) => {
                 <button data-testid="dark" onClick={toggleDarkMode}>{darkButton}</button>
             <PlayerContainer>
             {props.players.map(player => {
+                console.log(player.country);
                 return <PlayerDiv>
                     <h3>{player.name}</h3>
                         <p>{player.country}</p>

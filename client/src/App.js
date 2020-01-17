@@ -4,6 +4,7 @@ import './App.css';
 import axios from 'axios'
 import PlayersList from './components/PlayersList'
 import useDarkMode from './hooks/useDarkMode'
+import Graph from './components/Graph'
 
 
 class App extends React.Component {
@@ -24,15 +25,7 @@ class App extends React.Component {
       
   }
 
-  // componentDidUpdate = (prevProps, prevState) => {
-  //   if (prevState.darkMode === true){
-  //     this.setState({isDarkMode: "Light Mode"})
-  //   } 
-    
-  //    if (prevState.darkMode === false){
-  //     this.setState({isDarkMode: "Dark Mode"})
-  //   }
-  // }
+
 
   
 
@@ -40,6 +33,7 @@ class App extends React.Component {
     
     return <div className="App">
       <PlayersList players={this.state.players} isDarkMode={this.state.isDarkMode} darkMode={this.state.darkMode}/>
+      <Graph players={this.state.players}/>
     </div>
   }
 }
