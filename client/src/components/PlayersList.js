@@ -23,17 +23,23 @@ const H1 = styled.h1`
 
 const PlayersList = (props) => {
     const [darkMode, setDarkMode] = useDarkMode(props.darkMode);
+    const [darkButton, setDarkButton] = useState("Dark Mode");
     const toggleDarkMode = (e) => {
-        
         e.preventDefault();
         setDarkMode(!darkMode);
+        if (darkMode === true){
+            setDarkButton("Dark Mode");
+        } else {
+            setDarkButton("Light Mode")
+        }
+        
         console.log(darkMode);
       }
     
     return(
         <div>
             <H1>Players in the Women's World Cup</H1>
-                <button onClick={toggleDarkMode}>{props.isDarkMode}</button>
+                <button data-testid="dark" onClick={toggleDarkMode}>{darkButton}</button>
             <PlayerContainer>
             {props.players.map(player => {
                 return <PlayerDiv>

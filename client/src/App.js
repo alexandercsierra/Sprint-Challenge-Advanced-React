@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = {
       players: [],
       darkMode: false,
-      isDarkMode: "Light Mode"
+      isDarkMode: "Dark Mode"
     }
   }//end constructor
 
@@ -21,12 +21,18 @@ class App extends React.Component {
       .then(res=> this.setState({players: res.data}))
       .catch(err =>console.log(err))
 
-      if (this.state.darkMode === true){
-        this.setState({isDarkMode: "Dark Mode"})
-      } else {
-        this.setState({isDarkMode: "Light Mode"})
-      }
+      
   }
+
+  // componentDidUpdate = (prevProps, prevState) => {
+  //   if (prevState.darkMode === true){
+  //     this.setState({isDarkMode: "Light Mode"})
+  //   } 
+    
+  //    if (prevState.darkMode === false){
+  //     this.setState({isDarkMode: "Dark Mode"})
+  //   }
+  // }
 
   
 
